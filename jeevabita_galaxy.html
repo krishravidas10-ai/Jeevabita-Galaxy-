@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeevabita Galaxy - Scientific Predictions & Mind-Blowing Experiments</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 50%, #16213e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00d4ff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            transition: color 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #16213e 100%);
+            color: white;
+            padding: 100px 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="stars" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1.5" fill="white" opacity="0.4"/><circle cx="60" cy="40" r="1" fill="white" opacity="0.3"/><circle cx="80" cy="70" r="1.2" fill="white" opacity="0.35"/><circle cx="30" cy="80" r="0.8" fill="white" opacity="0.25"/><circle cx="90" cy="20" r="1" fill="white" opacity="0.3"/></pattern></defs><rect width="1200" height="600" fill="url(%23stars)"/></svg>');
+            opacity: 0.8;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 212, 255, 0.3);
+            font-weight: bold;
+            animation: slideDown 0.8s ease-out;
+            letter-spacing: 2px;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #00d4ff;
+            font-weight: bold;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            font-size: 15px;
+            border: 2px solid;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #00d4ff;
+            color: #1a1a2e;
+            border-color: #00d4ff;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00d4ff;
+            border-color: #00d4ff;
+        }
+
+        .btn-secondary:hover {
+            background: #00d4ff;
+            color: #1a1a2e;
+            transform: scale(1.05);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            padding: 60px;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .about h2 {
+            color: #16213e;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 4px solid #00d4ff;
+            padding-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .about h2::before {
+            content: '✦';
+            color: #00d4ff;
+            font-size: 28px;
+        }
+
+        .about p {
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid #00d4ff;
+            border-bottom: 3px solid #667eea;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            text-align: center;
+            position: relative;
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.1) 0%, transparent 60%);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+            border-top-width: 6px;
+        }
+
+        .feature-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: float-icon 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card:hover .feature-icon {
+            animation: float-icon 0.8s ease-in-out;
+        }
+
+        @keyframes float-icon {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .feature-card h3 {
+            color: #16213e;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            color: #16213e;
+            margin: 60px 0 40px;
+            font-weight: bold;
+            border-bottom: 4px solid #00d4ff;
+            border-top: 2px solid #667eea;
+            padding: 20px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: '✦';
+            color: #00d4ff;
+            font-size: 22px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .section-title::before {
+            left: 5%;
+        }
+
+        .section-title::after {
+            right: 5%;
+        }
+
+        /* YouTube Section */
+        .youtube-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+        }
+
+        .youtube-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .youtube-text h3 {
+            color: #16213e;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .youtube-text p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .youtube-text ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .youtube-text li {
+            color: #666;
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 15px;
+        }
+
+        .youtube-text li:before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .youtube-badge {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 3px solid #ff0000;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+        }
+
+        .youtube-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff0000, #ffff00, #ff0000);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .youtube-badge h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #ff0000;
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .youtube-channel {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #ffff00;
+            position: relative;
+            z-index: 2;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .youtube-badge p {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8ff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid #00d4ff;
+            border-top: 2px solid #667eea;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: right 0.6s;
+            pointer-events: none;
+        }
+
+        .project-card:hover::before {
+            right: 100%;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.25);
+            transform: translateY(-8px) scale(1.02);
+            border-left-width: 8px;
+        }
+
+        .project-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+        }
+
+        .project-card:hover .project-icon {
+            animation: bounce 0.6s;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .project-card h4 {
+            color: #16213e;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .project-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .status {
+            display: inline-block;
+            background: #00d4ff;
+            color: #1a1a2e;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .status.upcoming {
+            background: #ffa500;
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 50%, #16213e 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 15px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 212, 255, 0.1);
+            border: 2px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(102, 126, 234, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .contact h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 1px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .contact-item h4 {
+            color: #00d4ff;
+            margin-bottom: 12px;
+            font-size: 17px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .contact-item p {
+            color: #ddd;
+            font-size: 15px;
+        }
+
+        .contact-item a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: #999;
+            text-align: center;
+            padding: 30px 2rem;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            margin: 15px 0;
+        }
+
+        .footer-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .youtube-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 12px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="jeevabita_logo.jpg" alt="Jeevabita Galaxy Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 8px;">
+                </div>
+                <span>JEEVABITA GALAXY</span>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#projects">Projects</a>
+                <a href="#youtube">YouTube</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-subtitle">🚀 Welcome to</div>
+            <h1>JEEVABITA GALAXY</h1>
+            <p style="font-size: 18px; color: #00d4ff; margin-bottom: 15px; font-weight: bold;">By Krish Kumar</p>
+            <p>Scientific Predictions • Mind-Blowing Experiments • Cosmic Knowledge & Reasoning</p>
+            <p style="font-size: 16px; color: #bbb;">Exploring the universe through innovation, predictions, and groundbreaking experiments</p>
+            <div class="cta-buttons">
+                <a href="#youtube" class="btn btn-primary">Visit Our YouTube</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <div class="container">
+        <section class="about" id="about">
+            <h2>About Jeevabita Galaxy</h2>
+            <p style="color: #00d4ff; font-weight: bold; margin-bottom: 15px; font-size: 16px;">Founded & Led by: Krish Kumar</p>
+            <p>
+                Jeevabita Galaxy is a scientific research and experimental platform dedicated to exploring the universe's greatest mysteries through predictions, reasoning, and innovative experiments. We push the boundaries of human knowledge and challenge conventional thinking.
+            </p>
+            <p>
+                Our mission is to inspire minds, spark curiosity, and showcase groundbreaking experiments that will blow your mind and reshape how you think about science, space, and technology.
+            </p>
+        </section>
+
+        <!-- Features Section -->
+        <h2 class="section-title">What We Offer</h2>
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔬</div>
+                <h3>Scientific Predictions</h3>
+                <p>Innovative predictions based on scientific reasoning and research</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Mind-Blowing Content</h3>
+                <p>Experiments and reasoning that challenge your perception of reality</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Cosmic Knowledge</h3>
+                <p>Deep insights into space, physics, and scientific mysteries</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Innovation Lab</h3>
+                <p>Cutting-edge experiments and groundbreaking research initiatives</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3>Knowledge Sharing</h3>
+                <p>Educational content for curious minds of all levels</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Future Projects</h3>
+                <p>Ambitious missions pushing the limits of science and technology</p>
+            </div>
+        </section>
+
+        <!-- YouTube Section -->
+        <section class="youtube-section" id="youtube">
+            <div class="youtube-content">
+                <div class="youtube-text">
+                    <h3>🎥 Ravidas Thinker Experiment</h3>
+                    <p><strong>Channel Handle:</strong> @RAVIDASGROUP-KR25</p>
+                    <p><strong>Run by:</strong> Krish Kumar | Based in India</p>
+                    <p style="margin-top: 15px; line-height: 1.9;">Subscribe to explore mind-blowing experiments, scientific predictions, and groundbreaking content about space, rockets, rovers, and cosmic mysteries.</p>
+
+                    <p style="margin-top: 20px; color: #00d4ff; font-weight: bold;">🔬 What You'll Find:</p>
+                    <ul>
+                        <li>Rocket & Missile Test Demonstrations</li>
+                        <li>Non-Operational Rovers & Robots</li>
+                        <li>Nuclear & Physics Information</li>
+                        <li>Aliens, UFOs & Area 51 Investigations</li>
+                        <li>Animations, Demos & Educational Content</li>
+                        <li>Scientific Reasoning & Predictions</li>
+                        <li>Mind-Blowing Experiments</li>
+                    </ul>
+
+                    <p style="margin-top: 20px; color: #00d4ff; font-weight: bold;">🎯 Upcoming Milestones:</p>
+                    <ul>
+                        <li>Major Experiment & Live Demonstrations</li>
+                        <li>Team Reveal at 1,000 Subscribers</li>
+                        <li>Owner Face Reveal</li>
+                        <li>Membership Benefits Program</li>
+                    </ul>
+
+                    <p style="margin-top: 25px; font-weight: bold; color: #ff6600;">💬 For Enquiries & Suggestions:</p>
+                    <p>Email: <a href="mailto:ravidasthinker@gmail.com" style="color: #00d4ff;">ravidasthinker@gmail.com</a></p>
+                    <p style="margin-top: 10px; font-size: 14px;">Visit our YouTube channel and leave your comments, suggestions, and collaboration requests!</p>
+                </div>
+
+                <div class="youtube-badge">
+                    <div style="margin-bottom: 20px;">
+                        <img src="ravidas_thinker.jpg" alt="Ravidas Thinker Badge" style="width: 120px; height: 120px; object-fit: contain; border-radius: 10px; box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);">
+                    </div>
+                    <h4>RAVIDAS THINKER<br>EXPERIMENT</h4>
+                    <p style="color: #00d4ff; font-size: 13px; margin: 10px 0; font-weight: bold;">@RAVIDASGROUP-KR25</p>
+                    <div class="youtube-channel">Subscribe Now</div>
+                    <p style="margin-top: 15px; font-size: 13px; color: #fff; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 15px;">Scientific Predictions<br>Mind-Blowing Experiments<br>Cosmic Knowledge</p>
+                    <p style="margin-top: 15px; font-size: 12px; color: #ffff00; font-weight: bold;">✓ Educational Purpose Only<br>✓ Safe & Legal</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <h2 class="section-title">Upcoming Projects</h2>
+        <section class="projects-grid" id="projects">
+            <div class="project-card">
+                <div class="project-icon">🚀</div>
+                <h4>Rocket Launch Experiment</h4>
+                <p>An ambitious rocket launch project showcasing advanced propulsion systems and space exploration technology.</p>
+                <span class="status upcoming">Coming Soon</span>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🤖</div>
+                <h4>Autonomous Rover Development</h4>
+                <p>Building an advanced rover for exploration and research with cutting-edge robotics technology.</p>
+                <span class="status upcoming">In Development</span>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🔭</div>
+                <h4>Space Research Initiative</h4>
+                <p>Comprehensive research and experiments focused on understanding cosmic phenomena and space science.</p>
+                <span class="status">Active</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h4>📧 Email</h4>
+                    <p><a href="mailto:Ravidasthinker@gmail.com">Ravidasthinker@gmail.com</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>📍 Location</h4>
+                    <p>Piska Nagari, Ranchi<br>Near Main Road Street<br>India</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>📱 Phone</h4>
+                    <p>For enquiries, please visit our YouTube channel and comment</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>🎥 YouTube Channel</h4>
+                    <p><a href="#">Ravidas Thinker Experiment</a><br>Subscribe & Comment for inquiries</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; border-top: 2px solid rgba(0, 212, 255, 0.3); padding-top: 25px; margin-top: 25px; position: relative; z-index: 1;">
+                <p style="color: #aaa; font-size: 14px;">💬 <strong>Primary Contact Method:</strong> YouTube Channel Comments</p>
+                <p style="color: #aaa; font-size: 14px; margin-top: 10px;">Visit <strong>Ravidas Thinker Experiment</strong> YouTube channel, watch our videos, and leave your enquiries in the comments section.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p><strong>© 2026 Jeevabita Galaxy</strong> - Scientific Research & Innovation</p>
+            <p><strong>Founded by:</strong> Krish Kumar</p>
+            <p>Predictions • Experiments • Cosmic Knowledge • Mind-Blowing Content</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#youtube">YouTube</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 12px; color: #666;">Jeevabita Galaxy | Ranchi, India | Official Website</p>
+        </div>
+    </footer>
+</body>
+</html>
